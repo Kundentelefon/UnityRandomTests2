@@ -153,8 +153,8 @@ MonoBehaviour:
   cimer: 0
   maxObjects: 0
   maxObjects2: 0
-  columns: 4
-  rows: 4
+  columns: 8
+  rows: 8
   objectSpacing: 1
 --- !u!135 &38111804
 SphereCollider:
