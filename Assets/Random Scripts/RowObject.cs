@@ -27,7 +27,7 @@ public class RowObject : MonoBehaviour {
         for (var row = 0; row < rows; row++)
         {
             row += 2;
-            curpos = new Vector3(0, curpos.y, columns);
+            //curpos = new Vector3(0, curpos.y, columns);
             for (var col = 0; col < columns; col++)
             {
 

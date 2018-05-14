@@ -16,33 +16,33 @@ public class ScaleObject1 : MonoBehaviour
 
     void Update()
     {
-        RaycastHit hit;
-        Ray ray;
+    //    RaycastHit hit;
+    //    Ray ray;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-            {
-                tr = hit.transform;
-                targetScale = minScale;
-                v3Scale = new Vector3(targetScale, targetScale, targetScale);
-            }
-        }
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //        if (Physics.Raycast(ray, out hit))
+    //        {
+    //            tr = hit.transform;
+    //            targetScale = minScale;
+    //            v3Scale = new Vector3(targetScale, targetScale, targetScale);
+    //        }
+    //    }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-            {
-                tr = hit.transform;
-                targetScale = maxScale;
-                v3Scale = new Vector3(targetScale, targetScale, targetScale);
-            }
-        }
+    //    if (Input.GetMouseButtonDown(1))
+    //    {
+    //        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //        if (Physics.Raycast(ray, out hit))
+    //        {
+    //            tr = hit.transform;
+    //            targetScale = maxScale;
+    //            v3Scale = new Vector3(targetScale, targetScale, targetScale);
+    //        }
+    //    }
 
-        if (tr != null)
-            tr.localScale = Vector3.Lerp(tr.localScale, v3Scale, Time.deltaTime * shrinkSpeed);
+    //    if (tr != null)
+    //        tr.localScale = Vector3.Lerp(tr.localScale, v3Scale, Time.deltaTime * shrinkSpeed);
     }
 }
 
