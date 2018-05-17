@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/pathfindingTest.unity
-  isLoaded: 1
-  isActive: 1
