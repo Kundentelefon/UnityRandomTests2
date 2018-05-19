@@ -534,7 +534,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732499800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.764667}
+  m_LocalPosition: {x: 0, y: 0, z: 2.68}
   m_LocalScale: {x: 2.9917915, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1954063803}
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2a5dbc020e79c4f9cfec83c03d283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayGridGizmos: 0
+  displayGridGizmos: 1
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 512
@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c084502b9f21ba6439441458d2dc7dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawSpeed: 10
 --- !u!114 &1132062876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,7 +929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1954063799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32591, y: 0, z: -114.3}
+  m_LocalPosition: {x: -0.32591, y: 0, z: -9.9}
   m_LocalScale: {x: 10.916951, y: 10.916949, z: 10.916949}
   m_Children:
   - {fileID: 732499801}

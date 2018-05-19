@@ -111,23 +111,7 @@ public class Grid : MonoBehaviour{
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
 
-        //Detaches Grid class with anyithing from the path
-        //if (onlyDisplayPathGizmos)
-        //{
-        //    if(path!= null)
-        //    {
-        //        foreach (Node n in path)
-        //        {
-        //            Gizmos.color = Color.black;
-        //            //-1 for a little outline for each space
-        //            Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-        //        }
-
-        //    }
-        //}
-        //else { 
-
-        if (grid!= null && displayGridGizmos){
+            if (grid!= null && displayGridGizmos){
             foreach(Node n in grid)
             {
                 //if there is no collision = white if collision = red

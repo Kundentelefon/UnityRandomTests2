@@ -64,6 +64,7 @@ public class Unit : MonoBehaviour {
             //we dont want to draw the waypoints we already past so we start at targetIndex
             for (int i = targetIndex; i < path.Length; i++)
             {
+                //Get the nodes only when it changes the way
                 Gizmos.color = Color.black;
                 Gizmos.DrawCube(path[i], Vector3.one);
 

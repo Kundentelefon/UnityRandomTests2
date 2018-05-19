@@ -10,6 +10,10 @@ public class Pathfinding : MonoBehaviour {
     //public Transform seeker, target;
 
     PathRequestManager requestManager;
+    List<Node> drawNodes = new List<Node>();
+    bool drawThis = false;
+    int drawSpeed = 30;
+    int count = 0;
 
     Grid grid;
 
@@ -17,6 +21,7 @@ public class Pathfinding : MonoBehaviour {
     {        
             grid = GetComponent<Grid>();
         requestManager = GetComponent<PathRequestManager>();
+        drawThis = true;
     }
 
     //replaced durch Courutine
@@ -66,7 +71,7 @@ public class Pathfinding : MonoBehaviour {
         {
             //find Node with the lowest f_cost
             Node currentNode = openSet.RemoveFirst();
-            //This Code is optimizid through heap
+                            //This Code is optimizid through heap
             //Node currentNode = openSet[0]; //first element in openset
             ////loop to all of the nodes in openset
             //for (int i = 1; i < openSet.Count; i++)
@@ -83,12 +88,11 @@ public class Pathfinding : MonoBehaviour {
             ////remove it from openSet and add to closeSet
             //openSet.Remove(currentNode);
             closedSet.Add(currentNode);
-
-            //we found ouer path
-            if(currentNode == targetNode)
+                //we found ouer path
+                if (currentNode == targetNode)
             {
                 sw.Stop();
-                print("Path found: " + sw.ElapsedMilliseconds + " ms");
+                print("Path found: " + sw.ElapsedMilliseconds + " ms" + " with a frameWait of " + drawSpeed );
                 //found path
                 pathSuccess = true;
                 break;
@@ -97,8 +101,14 @@ public class Pathfinding : MonoBehaviour {
             //if not found the past, loop through each neighbouring node of current node
             foreach(Node neighbour in grid.GetNeighbours(currentNode))
             {
-                //check if the neighbour in the not walkable or in the close list, than skip
-                if(!neighbour.walkable || closedSet.Contains(neighbour))
+                    if(count >= drawSpeed) { 
+                    yield return new WaitForEndOfFrame();
+                        count = 0;
+                    }
+                    count++;
+                    drawNodes.Add(neighbour);
+                    //check if the neighbour in the not walkable or in the close list, than skip
+                    if (!neighbour.walkable || closedSet.Contains(neighbour))
                 {
                     continue;
                 }
@@ -124,6 +134,7 @@ public class Pathfinding : MonoBehaviour {
             }
 
         }
+            
         }
 
         //wait for 1 frame befor returning
@@ -132,6 +143,20 @@ public class Pathfinding : MonoBehaviour {
         waypoints = RetracePath(startNode, targetNode);
         }
         requestManager.FinishedProcessingPath(waypoints, pathSuccess);
+    }
+
+    void OnDrawGizmos()
+    {
+        if (drawThis) { 
+        foreach (Node n in drawNodes)
+            {
+
+                //if there is no collision = white if collision = red
+                Gizmos.color = (n.gCost < n.hCost) ? Color.green : Color.red;
+
+            Gizmos.DrawWireSphere(n.worldPosition, 1);
+            }
+        }
     }
 
     //Ones we found target node (current node = target node), we need to retrace the steps to get the path from start to end node
