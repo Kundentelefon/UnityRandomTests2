@@ -1,0 +1,7 @@
+Plane with Ground Material (change size 2x2x2)
+Cube with Obstacle Material, Layer unwalkable
+AStar: gridScript:unwalkable mask, world size 20x20 node radius 0.5
+	pathfindingScript, pathrequestSript
+Seeker (Capsule Collider): UnitScript: TargetTransform, speed 20
+Target (Capsule Collider)
+In Folder: Grid, Ground, Heap, Node, Obstacle, Pathfinding, Pathrequest, Unit
