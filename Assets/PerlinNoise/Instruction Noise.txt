@@ -1,0 +1,3 @@
+GameObject Map Generator: Map Display Script:TextureRenderer:Plane &
+MapGenerator Script: Width=100, Height=100, NoiseScale=11, Octaves=4, Persistance=0.1, Lacunarity=4, Seed=70, offset=1-1,Falloffvalues=2-3,Regions between 0-1
+Plane: No Collider with Map Mat(Material)
