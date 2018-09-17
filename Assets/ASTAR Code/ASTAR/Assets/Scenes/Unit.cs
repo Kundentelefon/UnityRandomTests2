@@ -38,11 +38,14 @@ public class Unit : MonoBehaviour {
         }
     }
 
+    public void Pathfinished()
+    {
+        Debug.Log("FINISHED");
+    }
+
     //if the target position moves, the path automatical updates
     IEnumerator UpdatePath()
     {
-
-
         //every frame we request a new path from the pathREquestManager
 
             //at the start of the game it has an high delta time, so wait 0.3 seconds
@@ -64,7 +67,6 @@ public class Unit : MonoBehaviour {
         PathRequestManager.RequestPath(new PathRequest( transform.position, target.position, OnpathFound));
                 targetPosOld = target.position;
             }
-
         }
     }
 
